@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for item in tables_data %}
+        <h1>Action #{{ item['id'] }}</h1>
+        <table border="1" style="width:100%; margin-bottom: 20px; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    {% for key in item.keys() %}
+                    <th style="background: #eee; padding: 8px;">{{ key }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for value in item.values() %}
+                    <td style="padding: 8px; text-align: center;">{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    {% endfor %}
+{% endblock %}
